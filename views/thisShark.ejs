@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>A Shark Named <%= thisShark.name %></title>
+  </head>
+  <body>
+    <h2>A Shark Named <%= thisShark.name %></h2>
+    <h4><%= thisShark.name %> is <%= thisShark.age %>
+      <% if (thisShark.age > 1) { %>
+        years old.</h4>
+      <% } else { %>
+        year old.</h4>
+      <% } %>
+      <p><a href="/">Return to Shark's House</a></p>
+  </body>
+</html>

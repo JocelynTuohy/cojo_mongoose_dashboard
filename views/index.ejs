@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>All the Sharks</title>
+    <style>
+      *{
+        outline: solid 1px black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/sharks/new">Add a New Shark</a>
+    <table id="sharksTable">
+      <thead>
+        <tr>
+          <td>Shark Name:</td>
+          <td>Shark Age:</td>
+          <td>Edit:</td>
+          <td>Delete:</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let i = 0; i < sharks.length; ++i){ %>
+        <tr>
+          <td><a href="/sharks/<%= sharks[i].id %>"><%= sharks[i].name %></a></td>
+          <td><%= sharks[i].age %></td>
+          <td><a href="/sharks/edit/<%= sharks[i].id %>">Edit</a></td>
+          <td>
+            <form action="/sharks/destroy/<%= sharks[i].id %>" method="POST">
+              <button type="submit">Delete</button>
+            </form>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <% for (let j = 0; j < errors.length; ++j){ %>
+      <p><%= errors[j] %></p>
+    <% } %>
+  </body>
+</html>

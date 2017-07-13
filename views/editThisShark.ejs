@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Edit This Shark!</title>
+  </head>
+  <body>
+    <form action="/sharks/<%= thisShark.id %>" method="POST">
+      <label for="name">Edit Shark Name:</label>
+      <input type="text" id="name" name="name" value="<%= thisShark.name %>">
+      <label for="age">Edit Shark Age:</label>
+      <input type="text" id="age" name="age" value="<%= thisShark.age %>">
+      <button type="submit">Submit Changes</button>
+    </form>
+  </body>
+</html>
